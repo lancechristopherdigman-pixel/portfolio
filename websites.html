@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites | Lance Christopher Digman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f7fb',
+                            100: '#e5edfb',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#0f172a',
+                            accent: '#6366f1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px 0 rgba(99, 102, 241, 0.15);
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-grid antialiased text-gray-200 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- Sticky Navigation Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo / Name -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="relative w-11 h-11 rounded-xl overflow-hidden bg-slate-800 border border-slate-700 flex items-center justify-center shadow-inner group-hover:border-indigo-500/50 transition">
+                        <img src="Web Pics/WEBSITE LOGO.png" alt="Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/1e293b/ffffff?text=LCD';">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg text-white group-hover:text-indigo-400 transition tracking-wide">DIGMAN</span>
+                        <span class="text-xs text-gray-400 -mt-1 font-medium">Portfolio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">About</a>
+                    <a href="graphics.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Graphics</a>
+                    <a href="websites.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600/30 border border-indigo-500/30 shadow-sm transition">Websites</a>
+                    <a href="literary.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Literary</a>
+                    <a href="experience.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Experience</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">About</a>
+            <a href="graphics.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Graphics</a>
+            <a href="websites.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-white bg-indigo-600/30 border border-indigo-500/30">Websites</a>
+            <a href="literary.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Literary</a>
+            <a href="experience.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Experience</a>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-20">
+        <!-- Header Banner Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                    <i class="fa-solid fa-laptop-code text-xs"></i> Web Development & Projects
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Websites Worked
+                </h1>
+                <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
+                    A showpiece of digital projects, templates, and web concepts. Click on any preview image or action button to visit the live site.
+                </p>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-300">
+                    <i class="fa-solid fa-circle-info text-indigo-400"></i> Click on any preview card to open the live site link.
+                </div>
+            </div>
+        </section>
+
+        <!-- Websites Projects Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Website Project 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden group transition duration-300 flex flex-col">
+                    <a href="index.html" class="relative block overflow-hidden bg-slate-950 aspect-video group">
+                        <img src="Websites/3.png" alt="Personal Portfolio Website" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/ffffff?text=Portfolio+Website';">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website
+                            </span>
+                        </div>
+                    </a>
+                    <div class="p-6 border-t border-slate-800/80 bg-slate-900/40 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-xs font-medium text-indigo-400">
+                                <span>Personal Portfolio</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px]">Live</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">
+                                Official Portfolio Platform
+                            </h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                Modern portfolio displaying graphics design, web projects, literary works, and career milestones.
+                            </p>
+                        </div>
+                        <a href="index.html" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-xs font-semibold border border-slate-700/60 transition duration-300">
+                            Explore Site <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Website Project 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden group transition duration-300 flex flex-col">
+                    <a href="https://bit.ly/Digman_Youtube" target="_blank" rel="noopener noreferrer" class="relative block overflow-hidden bg-slate-950 aspect-video group">
+                        <img src="Websites/1.png" alt="YouTube Template Redesign" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/ffffff?text=YouTube+Template';">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website
+                            </span>
+                        </div>
+                    </a>
+                    <div class="p-6 border-t border-slate-800/80 bg-slate-900/40 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-xs font-medium text-indigo-400">
+                                <span>UI Concept</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[10px]">Template</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">
+                                YouTube Interface Concept
+                            </h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                Custom layout concept and video platform user interface designed for optimized media consumption.
+                            </p>
+                        </div>
+                        <a href="https://bit.ly/Digman_Youtube" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-xs font-semibold border border-slate-700/60 transition duration-300">
+                            Open Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Website Project 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden group transition duration-300 flex flex-col">
+                    <a href="https://bit.ly/Digman-FacebookTemplate" target="_blank" rel="noopener noreferrer" class="relative block overflow-hidden bg-slate-950 aspect-video group">
+                        <img src="Websites/2.png" alt="Facebook Social Template" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/ffffff?text=Facebook+Template';">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website
+                            </span>
+                        </div>
+                    </a>
+                    <div class="p-6 border-t border-slate-800/80 bg-slate-900/40 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-xs font-medium text-indigo-400">
+                                <span>Social App UI</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[10px]">Template</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">
+                                Facebook Platform Template
+                            </h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                Custom web layout template replicating interactive social feed elements and navigation structures.
+                            </p>
+                        </div>
+                        <a href="https://bit.ly/Digman-FacebookTemplate" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-xs font-semibold border border-slate-700/60 transition duration-300">
+                            Open Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                        LD
+                    </div>
+                    <span class="text-sm font-medium text-slate-300">
+                        Lance Christopher Digman &copy; <span id="current-year">2026</span>
+                    </span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-400">
+                    <a href="index.html" class="hover:text-white transition">About</a>
+                    <a href="graphics.html" class="hover:text-white transition">Graphics</a>
+                    <a href="websites.html" class="hover:text-white transition">Websites</a>
+                    <a href="literary.html" class="hover:text-white transition">Literary</a>
+                    <a href="experience.html" class="hover:text-white transition">Experience</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="GitHub">
+                        <i class="fa-brands fa-github text-base"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-base"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="Envelope Contact">
+                        <i class="fa-solid fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-xl', 'bg-slate-950/85');
+            } else {
+                header.classList.remove('shadow-xl', 'bg-slate-950/85');
+            }
+        });
+    </script>
+</body>
+</html>

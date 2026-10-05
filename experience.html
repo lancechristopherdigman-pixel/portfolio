@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Lance Christopher Digman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f7fb',
+                            100: '#e5edfb',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#0f172a',
+                            accent: '#6366f1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px 0 rgba(99, 102, 241, 0.15);
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-grid antialiased text-gray-200 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- Sticky Navigation Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo / Name -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="relative w-11 h-11 rounded-xl overflow-hidden bg-slate-800 border border-slate-700 flex items-center justify-center shadow-inner group-hover:border-indigo-500/50 transition">
+                        <img src="Web Pics/WEBSITE LOGO.png" alt="Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/1e293b/ffffff?text=LCD';">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg text-white group-hover:text-indigo-400 transition tracking-wide">DIGMAN</span>
+                        <span class="text-xs text-gray-400 -mt-1 font-medium">Portfolio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">About</a>
+                    <a href="graphics.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Graphics</a>
+                    <a href="websites.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Websites</a>
+                    <a href="literary.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Literary</a>
+                    <a href="experience.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600/30 border border-indigo-500/30 shadow-sm transition">Experience</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">About</a>
+            <a href="graphics.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Graphics</a>
+            <a href="websites.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Websites</a>
+            <a href="literary.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Literary</a>
+            <a href="experience.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-white bg-indigo-600/30 border border-indigo-500/30">Experience</a>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-20">
+        <!-- Header Banner Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                    <i class="fa-solid fa-briefcase text-xs"></i> Career & Academics
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Experience & Education
+                </h1>
+                <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
+                    A comprehensive timeline of academic milestones and professional experience in lead generation, customer support, and technical solutions.
+                </p>
+            </div>
+        </section>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+            <!-- Educational Background Section -->
+            <section class="space-y-8">
+                <div class="flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                        <i class="fa-solid fa-graduation-cap text-lg"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white tracking-tight">Educational Background</h2>
+                </div>
+
+                <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-8 space-y-8">
+                    
+                    <!-- School 1 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-amber-500 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300 shadow-lg shadow-amber-500/20">
+                            <i class="fa-solid fa-school text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Emilio Jacinto Elementary School</h3>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">2008 - 2014</span>
+                            </div>
+                            <p class="text-indigo-400 text-sm font-medium">Elementary Education</p>
+                            <p class="text-slate-400 text-xs sm:text-sm">Awards: <span class="text-amber-300 font-medium">With Honors</span></p>
+                        </div>
+                    </div>
+
+                    <!-- School 2 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-amber-500 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300 shadow-lg shadow-amber-500/20">
+                            <i class="fa-solid fa-book-open text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Lakan Dula High School</h3>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">2014 - 2018</span>
+                            </div>
+                            <p class="text-indigo-400 text-sm font-medium">Junior High School</p>
+                            <p class="text-slate-400 text-xs sm:text-sm">Awards: <span class="text-amber-300 font-medium">With Honors</span></p>
+                        </div>
+                    </div>
+
+                    <!-- School 3 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-indigo-500 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 shadow-lg shadow-indigo-500/20">
+                            <i class="fa-solid fa-atom text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Emilio Aguinaldo College</h3>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">2018 - 2020</span>
+                            </div>
+                            <p class="text-indigo-400 text-sm font-medium">Science Technology Engineering Mathematics (STEM)</p>
+                            <p class="text-slate-400 text-xs sm:text-sm">Awards: <span class="text-amber-300 font-medium">With Honors</span></p>
+                        </div>
+                    </div>
+
+                    <!-- School 4 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-emerald-500 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition duration-300 shadow-lg shadow-emerald-500/20">
+                            <i class="fa-solid fa-graduation-cap text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition">Universidad De Manila</h3>
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 w-fit">2020 - 2024</span>
+                            </div>
+                            <p class="text-emerald-400 text-sm font-medium">Bachelor of Science in Computer Engineering (BSCpE)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section class="space-y-8">
+                <div class="flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                        <i class="fa-solid fa-briefcase text-lg"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white tracking-tight">Work Experience</h2>
+                </div>
+
+                <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-8 space-y-8">
+
+                    <!-- Job 1 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-slate-600 flex items-center justify-center text-slate-400 group-hover:bg-indigo-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-headset text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Customer Service Representative (Sales)</h3>
+                                    <p class="text-indigo-400 text-sm font-medium">Alorica</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">March 2021 - June 2022</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Managed front-line customer inquiries while performing technical troubleshooting across network services, applications, and mobile hardware. Consistently met performance metrics by cross-selling and upselling expanded service plans and mobile hardware to address customer usage requirements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-amber-500 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                            <i class="fa-solid fa-screwdriver-wrench text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Advance Technical Support and Sales Representative</h3>
+                                    <p class="text-indigo-400 text-sm font-medium">Concentrix</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">June 2022 - February 2023</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Delivered tier-two technical support and customer resolution by diagnosing complex connectivity, device, application, and network infrastructure issues. Integrated sales solutions into support interactions, identifying customer needs during technical troubleshooting to recommend appropriate product and service upgrades.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-slate-600 flex items-center justify-center text-slate-400 group-hover:bg-indigo-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-handshake-simple text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Customer Loyalty Specialist (B2B)</h3>
+                                    <p class="text-indigo-400 text-sm font-medium">Acquire BPO</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">March 2023 - July 2023</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Drove business-to-business customer retention strategies by restructuring service plans, applying promotional discounts, and identifying churn risks. Executed direct sales tactics for tech hardware—including smartphones, tablets, laptops, and hotspot devices—to increase account value and preserve long-term client relationships.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-amber-500 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                            <i class="fa-solid fa-filter text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Prequal Specialist (Lead Generation)</h3>
+                                    <p class="text-indigo-400 text-sm font-medium">Nowcom Global LLC</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">August 2023 - April 2024</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Handled high-volume inbound and outbound communications to evaluate prospective clients and schedule high-value appointments. Conducted comprehensive customer background verifications to assess loan eligibility for automotive financing, efficiently filtering pipeline prospects and driving targeted lead conversions for the sales team.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Job 5 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-slate-600 flex items-center justify-center text-slate-400 group-hover:bg-indigo-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-chart-line text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Business Development Intern</h3>
+                                    <p class="text-indigo-400 text-sm font-medium">Alcoline Corporation</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">February 2024 - May 2024</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Contributed to core business growth initiatives by assisting in the launch of the Alcoline.ph website through page design and quality assurance testing. Designed promotional and event graphics to elevate brand presence, while performing data analytics on inventory and sales metrics to support operational decision-making.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Job 6 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-amber-500 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                            <i class="fa-solid fa-shield-halved text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Technical and Sales Representative</h3>
+                                    <p class="text-indigo-400 text-sm font-medium">Asurion</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/60 w-fit">July 2024 - May 2025</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Resolved complex mobile device issues while driving revenue through comprehensive device protection plans and tech accessories. Recommended customized protection packages and promoted eligible smart device offers to optimize coverage for clients' home and mobile ecosystems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Job 7 -->
+                    <div class="relative pl-6 sm:pl-10 group">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-indigo-500 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 shadow-lg shadow-indigo-500/20">
+                            <i class="fa-solid fa-car text-xs"></i>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl transition duration-300 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">Prequal Specialist (Lead Generation)</h3>
+                                    <p class="text-indigo-400 text-sm font-medium">Nowcom Global LLC</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 w-fit">April 2025 - Present</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Returned to lead prequalification operations, managing dual inbound/outbound call workflows to identify qualified buyer leads and book sales appointments. Perform rigorous customer background assessments to determine auto loan eligibility, ensuring seamless pipeline handoffs to financial officers.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                        LD
+                    </div>
+                    <span class="text-sm font-medium text-slate-300">
+                        Lance Christopher Digman &copy; <span id="current-year">2026</span>
+                    </span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-400">
+                    <a href="index.html" class="hover:text-white transition">About</a>
+                    <a href="graphics.html" class="hover:text-white transition">Graphics</a>
+                    <a href="websites.html" class="hover:text-white transition">Websites</a>
+                    <a href="literary.html" class="hover:text-white transition">Literary</a>
+                    <a href="experience.html" class="hover:text-white transition">Experience</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="GitHub">
+                        <i class="fa-brands fa-github text-base"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-base"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="Envelope Contact">
+                        <i class="fa-solid fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-xl', 'bg-slate-950/85');
+            } else {
+                header.classList.remove('shadow-xl', 'bg-slate-950/85');
+            }
+        });
+    </script>
+</body>
+</html>

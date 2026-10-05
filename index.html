@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lance Christopher Digman | Computer Engineer & Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f7fb',
+                            100: '#e5edfb',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#0f172a',
+                            accent: '#6366f1',
+                            amber: '#d97706',
+                            warm: '#85582a'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for Modern Aesthetics */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px 0 rgba(99, 102, 241, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.15) 100%);
+        }
+
+        /* Subtle mesh background grid */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-grid antialiased text-gray-200 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo / Name -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="relative w-11 h-11 rounded-xl overflow-hidden bg-slate-800 border border-slate-700 flex items-center justify-center shadow-inner group-hover:border-indigo-500/50 transition">
+                        <img src="Web Pics/WEBSITE LOGO.png" alt="Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/1e293b/ffffff?text=LCD';">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg text-white group-hover:text-indigo-400 transition tracking-wide">DIGMAN</span>
+                        <span class="text-xs text-gray-400 -mt-1 font-medium">Portfolio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600/30 border border-indigo-500/30 shadow-sm transition">About</a>
+                    <a href="graphics.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Graphics</a>
+                    <a href="websites.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Websites</a>
+                    <a href="literary.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Literary</a>
+                    <a href="experience.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-slate-800/60 transition">Experience</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-white bg-indigo-600/30 border border-indigo-500/30">About</a>
+            <a href="graphics.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Graphics</a>
+            <a href="websites.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Websites</a>
+            <a href="literary.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Literary</a>
+            <a href="experience.html" class="block px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-slate-900">Experience</a>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-20">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+            <!-- Background Banner Visual -->
+            <div class="relative w-full h-48 sm:h-64 md:h-80 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl mb-8 group">
+                <img src="Web Pics/background img.png" alt="Background Header" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" onerror="this.onerror=null; this.src='https://placehold.co/1200x400/0f172a/38bdf8?text=Computer+Engineering+%26+Tech';">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            </div>
+
+            <!-- Profile Info Overlay Grid -->
+            <div class="relative -mt-20 sm:-mt-28 px-4 sm:px-8">
+                <div class="flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-8">
+                    <!-- Profile Picture Frame -->
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                        <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-slate-950 bg-slate-900 shadow-2xl">
+                            <img src="Web Pics/Landing Page Photo.png" alt="Lance Christopher Digman" class="w-full h-full object-cover object-top scale-125" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1e293b/ffffff?text=Lance+Digman';">
+                        </div>
+                    </div>
+
+                    <!-- Profile Meta Details -->
+                    <div class="text-center md:text-left flex-1 space-y-2">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open for Opportunities
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                            Lance Christopher Digman
+                        </h1>
+                        <p class="text-lg sm:text-xl font-medium gradient-text">
+                            Computer Engineer | Web Developer
+                        </p>
+                    </div>
+
+                    <!-- Hero Call-to-Action Buttons -->
+                    <div class="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end pt-2 md:pt-0">
+                        <a href="#works" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 transition-all flex items-center gap-2">
+                            <span>View Works</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <a href="experience.html" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm transition-all flex items-center gap-2">
+                            <span>Experience</span>
+                            <i class="fa-solid fa-briefcase text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Tech Stack Tags -->
+                <div class="mt-8 pt-8 border-t border-slate-800/80 flex flex-wrap gap-2.5 justify-center md:justify-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider self-center mr-2">Skills & Tools:</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-code text-blue-400"></i> C++</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-amber-300 flex items-center gap-1.5"><i class="fa-brands fa-java text-amber-400"></i> Java</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-emerald-300 flex items-center gap-1.5"><i class="fa-brands fa-python text-emerald-400"></i> Python</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-yellow-300 flex items-center gap-1.5"><i class="fa-brands fa-js text-yellow-400"></i> JavaScript</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-orange-300 flex items-center gap-1.5"><i class="fa-brands fa-html5 text-orange-400"></i> HTML5 / CSS3</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-cyan-300 flex items-center gap-1.5"><i class="fa-solid fa-microchip text-cyan-400"></i> Microprocessors</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-purple-300 flex items-center gap-1.5"><i class="fa-solid fa-cube text-purple-400"></i> 3D Modeling</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-pink-300 flex items-center gap-1.5"><i class="fa-solid fa-pen-nib text-pink-400"></i> Pen Name: HIRO</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                    <i class="fa-solid fa-user text-lg"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">About Me</h2>
+            </div>
+
+            <!-- 2-Column Responsive Card Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1: Background & Mindset -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+                            <i class="fa-solid fa-[#0e1726] fa-graduation-cap text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Results-Driven Sales Specialist</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Greetings! I'm Lance Christopher Digman, a sales professional with a Computer Engineering background. I specialize in lead generation, inside sales, and pre-qualification—combining persuasion, active listening, and technical insight to drive client acquisition and revenue growth.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Programming & Technical Development -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+                            <i class="fa-solid fa-code-branch text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Core Technical Expertise</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            My foundational background in C++ and Java paved the way for exploring Python, JavaScript, CSS, and HTML. From service desk support to full web development, I thrive on building reliable systems and learning modern frameworks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Creative & Hardware Disciplines -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+                            <i class="fa-solid fa-palette text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Creative & Hardware Endeavors</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Beyond code, my versatile skill set encompasses graphic design, video editing, 3D modeling, and microprocessor systems. I also write short stories and poetry under the pen name <span class="text-indigo-400 font-semibold">HIRO</span>, blending imagination with emotional depth.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Professional Track Record -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
+                            <i class="fa-solid fa-rocket text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Professional Track Record</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Since beginning my professional journey in March 2021, I have consistently exceeded targets across outbound sales, retention, and service environments. I thrive on solving complex client challenges, building long-term business relationships, and delivering measurable results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
+            <div class="flex items-center justify-between mb-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                        <i class="fa-solid fa-layer-group text-lg"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Featured Works</h2>
+                </div>
+            </div>
+
+            <!-- Portfolio Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Graphics Portfolio Card -->
+                <a href="graphics.html" class="group glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col hover:-translate-y-2">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="Thumbnail/Graphics.jpg" alt="Graphics Projects" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/6366f1?text=Graphics+Portfolio';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-600/80 text-white backdrop-blur-md">
+                            Design & Visuals
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition mb-2">
+                                Graphics Design
+                            </h3>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                                Creative visual concepts, poster art, digital edits, and custom graphical assets crafted with precision.
+                            </p>
+                        </div>
+                        <div class="flex items-center text-indigo-400 font-semibold text-sm gap-2 pt-2 group-hover:translate-x-1 transition-transform">
+                            <span>Explore Graphics</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Websites Portfolio Card -->
+                <a href="websites.html" class="group glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col hover:-translate-y-2">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="Thumbnail/Websites.jpg" alt="Websites Projects" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/3b82f6?text=Websites+Portfolio';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/80 text-white backdrop-blur-md">
+                            Web Development
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition mb-2">
+                                Websites & Apps
+                            </h3>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                                Modern, responsive web applications, interactive user interfaces, and custom frontend architecture.
+                            </p>
+                        </div>
+                        <div class="flex items-center text-blue-400 font-semibold text-sm gap-2 pt-2 group-hover:translate-x-1 transition-transform">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Literary Portfolio Card -->
+                <a href="literary.html" class="group glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col hover:-translate-y-2">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="Thumbnail/Literary.jpg" alt="Literary Works" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/a855f7?text=Literary+Portfolio';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-purple-600/80 text-white backdrop-blur-md">
+                            By HIRO
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition mb-2">
+                                Literary Works
+                            </h3>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                                Creative writing, short stories, and poetic expressions exploring human emotion and imagination under pen name HIRO.
+                            </p>
+                        </div>
+                        <div class="flex items-center text-purple-400 font-semibold text-sm gap-2 pt-2 group-hover:translate-x-1 transition-transform">
+                            <span>Read Stories</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800/80 bg-slate-950/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Branding -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                        LD
+                    </div>
+                    <span class="text-sm font-medium text-slate-300">
+                        Lance Christopher Digman &copy; <span id="current-year">2026</span>
+                    </span>
+                </div>
+
+                <!-- Footer Quick Links -->
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-400">
+                    <a href="index.html" class="hover:text-white transition">About</a>
+                    <a href="graphics.html" class="hover:text-white transition">Graphics</a>
+                    <a href="websites.html" class="hover:text-white transition">Websites</a>
+                    <a href="literary.html" class="hover:text-white transition">Literary</a>
+                    <a href="experience.html" class="hover:text-white transition">Experience</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="GitHub">
+                        <i class="fa-brands fa-github text-base"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-base"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition border border-slate-700/50" aria-label="Envelope Contact">
+                        <i class="fa-solid fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Responsive mobile navigation toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        // Sticky Navbar shadow on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-xl', 'bg-slate-950/85');
+            } else {
+                header.classList.remove('shadow-xl', 'bg-slate-950/85');
+            }
+        });
+    </script>
+</body>
+</html>
